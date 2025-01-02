@@ -75,17 +75,16 @@ speed_test() {
 
 speed() {
     speed_test '' 'Speedtest.net'
-    speed_test '21541' 'Los Angeles, US'
-    speed_test '43860' 'Dallas, US'
-    speed_test '40879' 'Montreal, CA'
-    speed_test '61933' 'Paris, FR'
-    speed_test '28922' 'Amsterdam, NL'
-    speed_test '25858' 'Beijing, CN'
-    speed_test '24447' 'Shanghai, CN'
-    speed_test '60572' 'Guangzhou, CN'
-    speed_test '32155' 'Hong Kong, CN'
-    speed_test '13623' 'Singapore, SG'
-    speed_test '48463' 'Tokyo, JP'
+    speed_test '4268' 'MTS, Minsk'
+    speed_test '27486' 'A1, Minsk'
+    speed_test '10323' 'COSMOS TV, Minsk'
+    speed_test '47043' 'BYFLY.BY, Grodno'
+    speed_test '54470' 'beCloud, Minsk'
+    speed_test '3704' 'UNET.BY, Minsk'
+    speed_test '40879' 'PinPro, Minsk'
+    speed_test '59280' '1Net.BY, Minsk'  
+
+
 }
 
 io_test() {
@@ -251,9 +250,8 @@ install_speedtest() {
 }
 
 print_intro() {
-    echo "-------------------- A Bench.sh Script By Teddysun -------------------"
+    echo "-------------------- A Bench.sh Script By Teddysun | $(_green MOD-Belarus-v1.0)-------------------"
     echo " Version            : $(_green v2024-11-11)"
-    echo " Usage              : $(_red "wget -qO- bench.sh | bash")"
 }
 
 # Get System information
@@ -423,8 +421,8 @@ next
 print_system_info
 ipv4_info
 next
-print_io_test
-next
+#print_io_test
+#next
 install_speedtest && speed && rm -fr speedtest-cli
 next
 print_end_time

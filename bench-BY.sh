@@ -68,7 +68,7 @@ speed_test() {
         up_speed=$(awk '/Upload/{print $3" "$4}' ./speedtest-cli/speedtest.log)
         latency=$(awk '/Latency/{print $3" "$4}' ./speedtest-cli/speedtest.log)
         if [[ -n "${dl_speed}" && -n "${up_speed}" && -n "${latency}" ]]; then
-            printf "\033[0;33m%-18s\033[0;32m%-18s\033[0;31m%-20s\033[0;36m%-12s\033[0m\n" " ${nodeName}" "${up_speed}" "${dl_speed}" "${latency}"
+            printf "\033[0;33m%-21s\033[0;32m%-18s\033[0;31m%-20s\033[0;36m%-12s\033[0m\n" " ${nodeName}" "${up_speed}" "${dl_speed}" "${latency}"
         fi
     fi
 }
@@ -78,11 +78,16 @@ speed() {
     speed_test '4268' 'MTS, Minsk'
     speed_test '27486' 'A1, Minsk'
     speed_test '10323' 'COSMOS TV, Minsk'
-    speed_test '47043' 'BYFLY.BY, Grodno'
+    speed_test '30453' 'BYFLY, Minsk'
+    speed_test '1119' 'BYFLY MGTS, Minsk'
     speed_test '54470' 'beCloud, Minsk'
+    speed_test '21334' 'life, Minsk'
+    speed_test '3326' 'FlyNet, Minsk'
     speed_test '3704' 'UNET.BY, Minsk'
     speed_test '40879' 'PinPro, Minsk'
-    speed_test '59280' '1Net.BY, Minsk'  
+    speed_test '59280' '1Net.BY, Minsk'
+    speed_test '32929' 'Amigo.Minsk, Minsk'
+     
 
 
 }
@@ -246,11 +251,11 @@ install_speedtest() {
         mkdir -p speedtest-cli && tar zxf speedtest.tgz -C ./speedtest-cli && chmod +x ./speedtest-cli/speedtest
         rm -f speedtest.tgz
     fi
-    printf "%-18s%-18s%-20s%-12s\n" " Node Name" "Upload Speed" "Download Speed" "Latency"
+    printf "%-21s%-18s%-20s%-12s\n" " Node Name" "Upload Speed" "Download Speed" "Latency"
 }
 
 print_intro() {
-    echo "-------------------- A Bench.sh Script By Teddysun | $(_green MOD-Belarus-v1.0) -------------------"
+    echo "---------- A Bench.sh Script By Teddysun | $(_green MOD-Belarus-v1.0) ----------"
     echo " Version            : $(_green v2024-11-11)"
 }
 

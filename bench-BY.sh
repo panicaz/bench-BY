@@ -250,7 +250,7 @@ install_speedtest() {
 }
 
 print_intro() {
-    echo "-------------------- A Bench.sh Script By Teddysun | $(_green MOD-Belarus-v1.0)-------------------"
+    echo "-------------------- A Bench.sh Script By Teddysun | $(_green MOD-Belarus-v1.0) -------------------"
     echo " Version            : $(_green v2024-11-11)"
 }
 
